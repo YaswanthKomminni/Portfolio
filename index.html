@@ -19,7 +19,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2.4">
+  <link rel="stylesheet" href="css/style.css?v=2.5">
 </head>
 <body>
 
@@ -67,40 +67,62 @@
     <section id="hero" class="hero-section">
       <div class="hero-container">
         
-        <!-- Available Badge -->
-        <div class="availability-badge">
-          <span class="pulse-dot"></span>
-          <span class="availability-text">AVAILABLE TO WORK</span>
-        </div>
-        
-        <!-- Hero Title Layout with floating circle -->
-        <div class="hero-title-wrapper">
-          <div class="floating-circle"></div>
-          <h1 class="hero-title">
-            <span class="title-line title-white" id="hero-title-first">Komminni</span>
-            <span class="title-line title-chartreuse" id="hero-title-second">Yaswanth.</span>
-          </h1>
-        </div>
-        
-        <!-- Description shifted to the bottom-right -->
-        <div class="hero-bottom-grid">
-          <div class="hero-social-links">
-            <a href="https://github.com/YaswanthKomminni" target="_blank" rel="noopener noreferrer" class="social-pill">
-              GITHUB ↗
-            </a>
-            <a href="https://www.linkedin.com/in/yaswanth-komminni-a9ab05317/" target="_blank" rel="noopener noreferrer" class="social-pill">
-              LINKEDIN ↗
-            </a>
-            <a href="mailto:yaswanthkomminni06@gmail.com" class="social-pill">
-              EMAIL ↗
-            </a>
+        <!-- Left Side: Typographic Hero Content -->
+        <div class="hero-left-content">
+          <!-- Available Badge -->
+          <div class="availability-badge">
+            <span class="pulse-dot"></span>
+            <span class="availability-text">AVAILABLE TO WORK</span>
           </div>
           
-          <div class="hero-bio-paragraph">
-            <p>Computer Science undergraduate at <strong class="white-text">Amrita Vishwa Vidyapeetham</strong>. I build with Python, tinker with Arduino, and care about clean interfaces — from a Spotify-style player to a fire-fighting robot.</p>
+          <!-- Hero Title Layout with floating circle -->
+          <div class="hero-title-wrapper">
+            <div class="floating-circle"></div>
+            <h1 class="hero-title">
+              <span class="title-line title-white" id="hero-title-first">Komminni</span>
+              <span class="title-line title-chartreuse" id="hero-title-second">Yaswanth.</span>
+            </h1>
+          </div>
+          
+          <!-- Description shifted to the bottom-right -->
+          <div class="hero-bottom-grid">
+            <div class="hero-social-links">
+              <a href="https://github.com/YaswanthKomminni" target="_blank" rel="noopener noreferrer" class="social-pill">
+                GITHUB ↗
+              </a>
+              <a href="https://www.linkedin.com/in/yaswanth-komminni-a9ab05317/" target="_blank" rel="noopener noreferrer" class="social-pill">
+                LINKEDIN ↗
+              </a>
+              <a href="mailto:yaswanthkomminni06@gmail.com" class="social-pill">
+                EMAIL ↗
+              </a>
+            </div>
+            
+            <div class="hero-bio-paragraph">
+              <p>Computer Science undergraduate at <strong class="white-text">Amrita Vishwa Vidyapeetham</strong>. I build with Python, tinker with Arduino, and care about clean interfaces — from a Spotify-style player to a fire-fighting robot.</p>
+            </div>
           </div>
         </div>
-        
+
+        <!-- Right Side: Animated Circular Profile Image -->
+        <div class="hero-right-image">
+          <div class="image-animation-container">
+            <!-- Slow rotating outer orbit rings -->
+            <div class="orbit-ring outer-orbit"></div>
+            <div class="orbit-ring inner-orbit"></div>
+            
+            <!-- Floating Sparkles/Dots -->
+            <div class="floating-sparkle sparkle-1">✦</div>
+            <div class="floating-sparkle sparkle-2">✦</div>
+            <div class="floating-sparkle sparkle-3">●</div>
+            
+            <!-- Circular Profile Box -->
+            <div class="profile-circle-wrapper">
+              <img src="assets/profile.jpg" alt="Yaswanth Komminni Profile" class="profile-image">
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
     
@@ -513,7 +535,6 @@
                 <h4 class="panel-row-title">SSC</h4>
                 <p class="panel-row-subtitle">New Vision High School · 2021–2022</p>
               </div>
-              
             </div>
           </div>
           
@@ -540,6 +561,7 @@
                 </div>
                 <p class="panel-row-subtitle">Google</p>
               </div>
+              
               <!-- Cybersecurity Cert -->
               <div class="panel-row-item linkable" onclick="window.open('https://www.credly.com/badges/abde9b21-c28e-4a43-89e5-f931cff1dbdb/linked_in_profile', '_blank')">
                 <div class="row-title-with-icon">
