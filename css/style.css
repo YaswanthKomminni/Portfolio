@@ -894,6 +894,37 @@ h1, h2, h3, h4, h5, h6 {
 .projects-list-container {
   display: flex;
   flex-direction: column;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 10px;
+  border-bottom: 1px solid var(--border-light);
+  
+  /* Mask gradient for cinematic edge fade of scrolling list elements */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 25px, #000 calc(100% - 25px), transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 25px, #000 calc(100% - 25px), transparent);
+  
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 243, 59, 0.2) transparent;
+}
+
+/* Chrome/Safari scrollbar design */
+.projects-list-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.projects-list-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects-list-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: background var(--transition-fast);
+}
+
+.projects-list-container::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
 }
 
 .project-row {
