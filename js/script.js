@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   tickCursor();
 
   // Hover states for cursor expansion
-  const hoverTargets = document.querySelectorAll('a, button, .project-row, .email-cta-box, .social-pill');
+  const hoverTargets = document.querySelectorAll('a, button, .project-row, .email-cta-box, .social-pill, .panel-row-item.linkable, .highlightable-exp');
   hoverTargets.forEach(target => {
     target.addEventListener('mouseenter', () => {
       document.body.classList.add('hovering');

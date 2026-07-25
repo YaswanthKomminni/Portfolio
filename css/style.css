@@ -23,7 +23,7 @@ body {
 
 /* Hide standard cursor on desktop systems with pointer ability */
 @media (hover: hover) {
-  body, a, button, .project-row, .email-cta-box, .social-pill, .nav-item, .get-in-touch-btn {
+  body, a, button, .project-row, .email-cta-box, .social-pill, .nav-item, .get-in-touch-btn, .panel-row-item.linkable {
     cursor: none !important;
   }
 }
@@ -721,7 +721,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   ABOUT SECTION
+   ABOUT SECTION (REMOVED CGPA METRICS)
    ========================================================================== */
 .about-section-header {
   border-bottom: 1px solid var(--border-light);
@@ -729,50 +729,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 50px;
 }
 
-.about-grid-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
+.about-grid-single-col {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Metrics Left Column */
-.about-metrics-col {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-}
-
-.metric-block {
-  display: flex;
-  flex-direction: column;
-}
-
-.metric-value {
-  font-family: var(--font-serif);
-  font-size: 4rem;
-  color: var(--color-text-white);
-  line-height: 1;
-}
-
-.metric-label {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  color: var(--color-accent);
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-/* Paragraphs Right Column */
+/* Paragraphs Column centered */
 .about-text-col {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
 }
 
 .about-p {
   font-family: var(--font-sans);
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
   color: var(--color-text-muted);
   line-height: 1.7;
 }
@@ -829,7 +801,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   CREDENTIALS (EDUCATION & CERTS/EXP)
+   CREDENTIALS & ATTRACTIVE HIGHLIGHTED EXPERIENCE
    ========================================================================== */
 .credentials-grid-two-col {
   display: grid;
@@ -865,6 +837,7 @@ h1, h2, h3, h4, h5, h6 {
 .panel-row-item {
   border-bottom: 1px solid var(--border-light);
   padding-bottom: 20px;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
 .panel-row-item:last-child {
@@ -873,7 +846,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .panel-row-item.linkable {
-  cursor: pointer;
+  position: relative;
 }
 
 .row-title-with-icon {
@@ -910,6 +883,109 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   margin-top: 5px;
+}
+
+/* HIGH-END INTERACTIVE HIGHLIGHTED EXPERIENCE ITEMS */
+.highlightable-exp {
+  padding: 20px 15px;
+  border-radius: 6px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color var(--transition-normal), 
+              border-color var(--transition-normal), 
+              border-left var(--transition-fast),
+              transform var(--transition-normal);
+  border-left: 0px solid transparent;
+}
+
+.highlightable-exp:hover {
+  background-color: rgba(212, 243, 59, 0.015);
+  border-color: var(--border-hover);
+  border-left: 3px solid var(--color-accent);
+  transform: translateX(4px);
+}
+
+.exp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.exp-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  color: var(--color-text-white);
+  transition: color var(--transition-fast);
+}
+
+.highlightable-exp:hover .exp-title {
+  color: var(--color-accent);
+}
+
+.exp-badge-badge {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background-color: rgba(212, 243, 59, 0.08);
+  border: 1px solid rgba(212, 243, 59, 0.2);
+  padding: 3px 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.highlightable-exp:hover .exp-badge-badge {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: #000000;
+}
+
+.exp-badge-badge.purple {
+  color: #a855f7;
+  background-color: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+.highlightable-exp:hover .exp-badge-badge.purple {
+  border-color: #a855f7;
+  background-color: #a855f7;
+  color: #ffffff;
+}
+
+.exp-badge-badge.green {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.highlightable-exp:hover .exp-badge-badge.green {
+  border-color: #10b981;
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.exp-expanded-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  margin-top: 0;
+}
+
+.highlightable-exp:hover .exp-expanded-details {
+  max-height: 80px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.exp-bullet {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -1099,9 +1175,8 @@ h1, h2, h3, h4, h5, h6 {
     gap: 30px;
   }
   
-  .about-grid-two-col {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .about-grid-single-col {
+    padding: 0;
   }
   
   .toolkit-panel-box {
@@ -1191,6 +1266,11 @@ h1, h2, h3, h4, h5, h6 {
   .floating-circle {
     left: 45%;
     top: 5%;
+  }
+  
+  /* Disable slide down details on mobile to fit screen */
+  .highlightable-exp:hover .exp-expanded-details {
+    max-height: 120px;
   }
 }
 
