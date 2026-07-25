@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yaswanth Komminni | Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Yaswanth Komminni, Computer Science undergraduate. Python developer, Arduino tinkerer, and web developer.">
+  <meta name="keywords" content="Yaswanth Komminni, Komminni Yaswanth, Portfolio, Computer Science, Amrita University, Python, Arduino, Frontend Developer">
+  <meta name="author" content="Yaswanth Komminni">
+  
+  <!-- Google Fonts: Instrument Serif & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">KY<span class="logo-dot">.</span></a>
+      
+      <nav class="nav-links">
+        <a href="#work" class="nav-item">WORK</a>
+        <a href="#about" class="nav-item">ABOUT</a>
+        <a href="#skills" class="nav-item">SKILLS</a>
+        <a href="#contact" class="nav-item">CONTACT</a>
+      </nav>
+      
+      <a href="#contact" class="get-in-touch-btn">GET IN TOUCH ↗</a>
+      
+      <!-- Mobile menu trigger -->
+      <button class="mobile-toggle" aria-label="Toggle Menu">
+        <i data-lucide="menu" class="menu-open"></i>
+        <i data-lucide="x" class="menu-close"></i>
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu Dropdown -->
+  <div class="mobile-menu">
+    <nav class="mobile-nav-items">
+      <a href="#work" class="mobile-nav-item">WORK</a>
+      <a href="#about" class="mobile-nav-item">ABOUT</a>
+      <a href="#skills" class="mobile-nav-item">SKILLS</a>
+      <a href="#contact" class="mobile-nav-item">CONTACT</a>
+      <a href="#contact" class="mobile-get-in-touch">GET IN TOUCH ↗</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        
+        <!-- Available Badge -->
+        <div class="availability-badge">
+          <span class="pulse-dot"></span>
+          <span class="availability-text">AVAILABLE FOR INTERNSHIPS - 2026</span>
+        </div>
+        
+        <!-- Hero Title Layout with floating circle -->
+        <div class="hero-title-wrapper">
+          <div class="floating-circle"></div>
+          <h1 class="hero-title">
+            <span class="title-line title-white">Komminni</span>
+            <span class="title-line title-chartreuse">Yaswanth.</span>
+          </h1>
+        </div>
+        
+        <!-- Description shifted to the bottom-right -->
+        <div class="hero-bottom-grid">
+          <div class="hero-social-links">
+            <a href="https://github.com/YaswanthKomminni" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <i data-lucide="github"></i> GITHUB ↗
+            </a>
+            <a href="https://www.linkedin.com/in/yaswanth-komminni-a9ab05317/" target="_blank" rel="noopener noreferrer" class="social-pill">
+              <i data-lucide="linkedin"></i> LINKEDIN ↗
+            </a>
+            <a href="mailto:yaswanthkomminni06@gmail.com" class="social-pill">
+              <i data-lucide="mail"></i> EMAIL ↗
+            </a>
+          </div>
+          
+          <div class="hero-bio-paragraph">
+            <p>Computer Science undergraduate at <strong class="white-text">Amrita Vishwa Vidyapeetham</strong>. I build with Python, tinker with Arduino, and care about clean interfaces — from a Spotify-style player to a fire-fighting robot.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Skills Scrolling Marquee Ticker -->
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>STRUCTURES</span> <span class="bullet">✧</span>
+          <span>ARDUINO</span> <span class="bullet">✧</span>
+          <span>FRONTEND</span> <span class="bullet">✧</span>
+          <span>SQL</span> <span class="bullet">✧</span>
+          <span>LINUX</span> <span class="bullet">✧</span>
+          <span>PROBLEM SOLVING</span> <span class="bullet">✧</span>
+          <span>JAVA</span> <span class="bullet">✧</span>
+          <span>C</span> <span class="bullet">✧</span>
+          <span>JAVASCRIPT</span> <span class="bullet">✧</span>
+        </div>
+        <!-- Duplicate for infinite loop -->
+        <div class="marquee-content" aria-hidden="true">
+          <span>STRUCTURES</span> <span class="bullet">✧</span>
+          <span>ARDUINO</span> <span class="bullet">✧</span>
+          <span>FRONTEND</span> <span class="bullet">✧</span>
+          <span>SQL</span> <span class="bullet">✧</span>
+          <span>LINUX</span> <span class="bullet">✧</span>
+          <span>PROBLEM SOLVING</span> <span class="bullet">✧</span>
+          <span>JAVA</span> <span class="bullet">✧</span>
+          <span>C</span> <span class="bullet">✧</span>
+          <span>JAVASCRIPT</span> <span class="bullet">✧</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selected Work Section -->
+    <section id="work" class="work-section">
+      <div class="section-container">
+        
+        <div class="work-section-header">
+          <div class="header-left">
+            <span class="section-label">/ SELECTED WORK</span>
+            <h2 class="section-heading-serif">Things I've built.</h2>
+          </div>
+          <div class="header-right">
+            <span class="project-count">(08) projects</span>
+          </div>
+        </div>
+        
+        <!-- Project Rows List -->
+        <div class="projects-list-container">
+          
+          <!-- Project 01 -->
+          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Soundsphere'">
+            <div class="row-left">
+              <span class="project-number">01</span>
+              <div class="project-meta">
+                <h3 class="project-title">Sound Sphere</h3>
+                <span class="project-tags">FRONTEND - MEDIA</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YaswanthKomminni/Soundsphere" target="_blank" rel="noopener noreferrer" class="row-link-pill">LIVE ↗</a>
+                  <a href="https://github.com/YaswanthKomminni/Soundsphere" target="_blank" rel="noopener noreferrer" class="row-link-pill">CODE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">Spotify-inspired music streaming app with playback, controls, and track navigation built around an interactive UI.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+          <!-- Project 02 -->
+          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/AI-AGENT-FARMING'">
+            <div class="row-left">
+              <span class="project-number">02</span>
+              <div class="project-meta">
+                <h3 class="project-title">AI Agent for Smart Farming</h3>
+                <span class="project-tags">PYTHON - AI - RAG</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YaswanthKomminni/AI-AGENT-FARMING" target="_blank" rel="noopener noreferrer" class="row-link-pill">CODE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">Intelligent agricultural assistant that helps farmers make informed decisions using LLMs and retrieval-augmented generation over crop, weather, and market data.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+          <!-- Project 03 -->
+          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/JanMitra-AI-Powered-Government-Scheme-Assistant'">
+            <div class="row-left">
+              <span class="project-number">03</span>
+              <div class="project-meta">
+                <h3 class="project-title">JanMitra — Govt. Scheme Assistant</h3>
+                <span class="project-tags">AI - CIVIC TECH</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YaswanthKomminni/JanMitra-AI-Powered-Government-Scheme-Assistant" target="_blank" rel="noopener noreferrer" class="row-link-pill">CODE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">AI-powered assistant that surfaces relevant Indian government schemes for citizens through natural-language queries and personalized eligibility guidance.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+          <!-- Project 04 -->
+          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/ngo-awareness-website'">
+            <div class="row-left">
+              <span class="project-number">04</span>
+              <div class="project-meta">
+                <h3 class="project-title">NGO Awareness Website</h3>
+                <span class="project-tags">HTML - CSS - INAMIGOS</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YaswanthKomminni/ngo-awareness-website" target="_blank" rel="noopener noreferrer" class="row-link-pill">CODE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">Responsive awareness webpage for the InAmigos Foundation showcasing the NGO's mission, ongoing projects, social impact, and volunteer opportunities.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+          <!-- Project 05 -->
+          <div class="project-row" onclick="location.href='https://www.figma.com'">
+            <div class="row-left">
+              <span class="project-number">05</span>
+              <div class="project-meta">
+                <h3 class="project-title">NGO Website Feature Highlight</h3>
+                <span class="project-tags">FIGMA - UI/UX</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer" class="row-link-pill">LIVE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">Figma feature-highlight proposal for the InAmigos Foundation website — donation tracking, volunteer registration, impact showcase, campaigns, and event management with usability annotations.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+          <!-- Project 06 -->
+          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Genomic-Variant-Detection-System'">
+            <div class="row-left">
+              <span class="project-number">06</span>
+              <div class="project-meta">
+                <h3 class="project-title">Genomic Variant Detection</h3>
+                <span class="project-tags">PYTHON - BIOINFORMATICS</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YaswanthKomminni/Genomic-Variant-Detection-System" target="_blank" rel="noopener noreferrer" class="row-link-pill">CODE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">Detects DNA mutations by comparing sample sequences against a reference, surfacing mismatch positions through algorithmic string analysis.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+          <!-- Project 07 -->
+          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Automatic-Fire-Detection-and-Extinguishing-System'">
+            <div class="row-left">
+              <span class="project-number">07</span>
+              <div class="project-meta">
+                <h3 class="project-title">Auto Fire Detection System</h3>
+                <span class="project-tags">ARDUINO - HARDWARE</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YaswanthKomminni/Automatic-Fire-Detection-and-Extinguishing-System" target="_blank" rel="noopener noreferrer" class="row-link-pill">LIVE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">Arduino UNO + flame sensors, servo, and DC pump. PWM and transistor circuits direct water toward the fire in real time.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+          <!-- Project 08 -->
+          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Student-Grade-tracker'">
+            <div class="row-left">
+              <span class="project-number">08</span>
+              <div class="project-meta">
+                <h3 class="project-title">Student Grade Tracker</h3>
+                <span class="project-tags">PYTHON - GUI</span>
+                <div class="project-links-wrap" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YaswanthKomminni/Student-Grade-tracker" target="_blank" rel="noopener noreferrer" class="row-link-pill">CODE ↗</a>
+                </div>
+              </div>
+            </div>
+            <div class="row-middle">
+              <p class="project-row-desc">Developed a desktop application using Python and Tkinter to manage subject-wise student marks and automatically calculate grades; features a ttk tabular display.</p>
+            </div>
+            <div class="row-right">
+              <span class="arrow-indicator">↗</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        
+        <div class="about-section-header">
+          <span class="section-label">/ ABOUT</span>
+          <h2 class="section-heading-serif">Hello.</h2>
+        </div>
+        
+        <div class="about-grid-two-col">
+          <!-- Left Col: Metrics -->
+          <div class="about-metrics-col">
+            <div class="metric-block">
+              <span class="metric-value">7.11</span>
+              <span class="metric-label">CURRENT CGPA</span>
+            </div>
+            <div class="metric-block">
+              <span class="metric-value">95.7%</span>
+              <span class="metric-label">12TH - MPC</span>
+            </div>
+            <div class="metric-block">
+              <span class="metric-value">9.8/10</span>
+              <span class="metric-label">10TH - SSC</span>
+            </div>
+          </div>
+          
+          <!-- Right Col: Paragraphs -->
+          <div class="about-text-col">
+            <p class="about-p">I'm an enthusiastic CS undergrad based in Coimbatore, India. My focus is on Python, data structures, and algorithmic problem-solving — with detours into embedded systems and the web whenever a project demands it.</p>
+            <p class="about-p">I like work that crosses boundaries: a desktop GUI that becomes a daily tool, a bioinformatics script that turns into a learning exercise, an Arduino rig that ends up saving a tabletop from a candle.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Toolkit (Skills) Section -->
+    <section id="skills" class="toolkit-section">
+      <div class="section-container">
+        
+        <div class="toolkit-header">
+          <span class="section-label">/ TOOLKIT</span>
+          <h2 class="section-heading-serif">What I work with.</h2>
+        </div>
+        
+        <!-- 4-Column Panel Box -->
+        <div class="toolkit-panel-box">
+          
+          <!-- Technical Column -->
+          <div class="toolkit-column">
+            <span class="column-label">TECHNICAL</span>
+            <ul class="column-list">
+              <li>Python</li>
+              <li>C</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+          
+          <!-- Foundations Column -->
+          <div class="toolkit-column">
+            <span class="column-label">FOUNDATIONS</span>
+            <ul class="column-list">
+              <li>DSA</li>
+              <li>DBMS</li>
+              <li>Operating Systems</li>
+              <li>OOP</li>
+              <li>Frontend</li>
+            </ul>
+          </div>
+          
+          <!-- Tools Column -->
+          <div class="toolkit-column">
+            <span class="column-label">TOOLS</span>
+            <ul class="column-list">
+              <li>Linux</li>
+              <li>Git</li>
+              <li>Arduino</li>
+            </ul>
+          </div>
+          
+          <!-- Soft Column -->
+          <div class="toolkit-column">
+            <span class="column-label">SOFT</span>
+            <ul class="column-list">
+              <li>Leadership</li>
+              <li>Teamwork</li>
+              <li>Communication</li>
+            </ul>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Education, Certifications & Work Experience Section -->
+    <section class="credentials-section">
+      <div class="section-container">
+        
+        <div class="credentials-grid-two-col">
+          
+          <!-- Education Panel -->
+          <div class="credentials-panel">
+            <span class="panel-header-label">EDUCATION</span>
+            
+            <div class="panel-rows">
+              
+              <div class="panel-row-item">
+                <h4 class="panel-row-title">B.Tech, Computer Science</h4>
+                <p class="panel-row-subtitle">Amrita Vishwa Vidyapeetham · 2024–2028</p>
+              </div>
+              
+              <div class="panel-row-item">
+                <h4 class="panel-row-title">Intermediate (MPC)</h4>
+                <p class="panel-row-subtitle">New Vision Junior College · 2022–2024</p>
+              </div>
+              
+              <div class="panel-row-item">
+                <h4 class="panel-row-title">SSC</h4>
+                <p class="panel-row-subtitle">New Vision High School · 2021–2022</p>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- Certs & Experience Panel -->
+          <div class="credentials-panel">
+            <span class="panel-header-label">CERTIFICATIONS & EXPERIENCE</span>
+            
+            <div class="panel-rows">
+              
+              <div class="panel-row-item linkable" onclick="window.open('https://www.credly.com')">
+                <div class="row-title-with-icon">
+                  <h4 class="panel-row-title">Getting Started with AI</h4>
+                  <i data-lucide="external-link" class="panel-row-link-icon"></i>
+                </div>
+                <p class="panel-row-subtitle">IBM</p>
+              </div>
+              
+              <div class="panel-row-item linkable" onclick="window.open('https://github.com/YaswanthKomminni')">
+                <div class="row-title-with-icon">
+                  <h4 class="panel-row-title">5-Day AI Agents Intensive</h4>
+                  <i data-lucide="external-link" class="panel-row-link-icon"></i>
+                </div>
+                <p class="panel-row-subtitle">Google</p>
+              </div>
+              
+              <div class="panel-row-item">
+                <h4 class="panel-row-title">AI & Cloud Intern</h4>
+                <p class="panel-row-subtitle">IBM SkillsBuild & Edunet Foundation · Remote · Jun – Jul 2026</p>
+              </div>
+              
+              <div class="panel-row-item">
+                <h4 class="panel-row-title">Web Developer</h4>
+                <p class="panel-row-subtitle">InAmigos Foundation (IAF) · Remote · May – Jun 2026</p>
+              </div>
+              
+              <div class="panel-row-item">
+                <h4 class="panel-row-title">NSS Volunteer</h4>
+                <p class="panel-row-subtitle">Amrita University · Community outreach · 2025 – Present</p>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        
+        <div class="contact-header">
+          <span class="section-label">/ CONTACT</span>
+          <h2 class="contact-heading-serif">Let's build <span class="chartreuse-text">something.</span></h2>
+        </div>
+        
+        <div class="contact-grid-two-col">
+          <!-- Left Col: Giant Email Box -->
+          <div class="email-cta-box" onclick="location.href='mailto:yaswanthkomminni06@gmail.com'">
+            <span class="email-box-label">EMAIL</span>
+            <div class="email-box-content">
+              <span class="email-address-text">yaswanthkomminni06@gmail.com</span>
+              <span class="email-arrow">↗</span>
+            </div>
+          </div>
+          
+          <!-- Right Col: Links list -->
+          <div class="contact-links-list">
+            
+            <a href="tel:+919182257321" class="contact-link-row">
+              <span class="link-label"><i data-lucide="phone"></i> +91 91822 57321</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            
+            <a href="https://maps.google.com/?q=Coimbatore,India" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+              <span class="link-label"><i data-lucide="map-pin"></i> Coimbatore, India</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            
+            <a href="mailto:yaswanthkomminni06@gmail.com" class="contact-link-row">
+              <span class="link-label"><i data-lucide="mail"></i> yaswanthkomminni06@gmail.com</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/yaswanth-komminni-a9ab05317/" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+              <span class="link-label"><i data-lucide="linkedin"></i> LinkedIn</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            
+            <a href="https://github.com/YaswanthKomminni" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+              <span class="link-label"><i data-lucide="github"></i> GitHub</span>
+              <span class="link-arrow">↗</span>
+            </a>
+            
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <span class="footer-copyright">© 2026 KOMMINNI YASWANTH</span>
+      <span class="footer-design-tag">DESIGNED & BUILT WITH CARE.</span>
+    </div>
+  </footer>
+
+  <!-- Custom Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
