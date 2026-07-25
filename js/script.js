@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   tickCursor();
 
   // Hover states for cursor expansion
-  const hoverTargets = document.querySelectorAll('a, button, .project-row, .experience-row-card, .email-cta-box, .social-pill, .panel-row-item.linkable');
+  const hoverTargets = document.querySelectorAll('a, button, .project-row, .experience-card, .email-cta-box, .social-pill, .panel-row-item.linkable');
   hoverTargets.forEach(target => {
     target.addEventListener('mouseenter', () => {
       document.body.classList.add('hovering');
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Stagger transition delays in the experience rows
-  const experienceListRows = document.querySelectorAll('.experience-section .experience-row-card');
+  const experienceListRows = document.querySelectorAll('.experience-section .experience-card');
   experienceListRows.forEach((row, index) => {
     row.style.transitionDelay = `${(index % 4) * 80}ms`;
   });
