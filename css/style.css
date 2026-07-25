@@ -494,6 +494,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%; /* centers the face vertically */
+  filter: brightness(0.75) contrast(1.05) saturate(0.85); /* cinematic toning matching matte theme */
+  transition: filter var(--transition-normal);
+}
+
+.image-animation-container:hover .profile-image {
+  filter: brightness(0.88) contrast(1.02) saturate(0.95);
 }
 
 /* Double Orbit Dashed Rings */
