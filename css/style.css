@@ -23,7 +23,7 @@ body {
 
 /* Hide standard cursor on desktop systems with pointer ability */
 @media (hover: hover) {
-  body, a, button, .project-row, .email-cta-box, .social-pill, .nav-item, .get-in-touch-btn, .panel-row-item.linkable {
+  body, a, button, .project-row, .experience-row-card, .email-cta-box, .social-pill, .nav-item, .get-in-touch-btn, .panel-row-item.linkable {
     cursor: none !important;
   }
 }
@@ -103,7 +103,6 @@ body.hovering .custom-cursor-follower {
     display: none;
   }
 }
-
 
 /* ==========================================================================
    TYPOGRAPHY
@@ -510,8 +509,181 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-.work-section, .about-section, .toolkit-section, .credentials-section, .contact-section {
+.experience-section, .work-section, .about-section, .toolkit-section, .credentials-section, .contact-section {
   padding: 100px 0;
+}
+
+/* ==========================================================================
+   DEDICATED ATTENTION-GRABBING EXPERIENCE SECTION
+   ========================================================================== */
+.experience-section-header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+}
+
+.experience-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-row-card {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  align-items: flex-start;
+  padding: 45px 15px;
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color var(--transition-normal), 
+              border-color var(--transition-normal), 
+              border-left var(--transition-fast), 
+              transform var(--transition-normal);
+  border-left: 0px solid transparent;
+}
+
+.experience-row-card:hover {
+  background-color: rgba(212, 243, 59, 0.015);
+  border-bottom-color: var(--border-hover);
+  border-left: 4px solid var(--color-accent);
+  transform: translateX(6px);
+}
+
+.exp-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 30px;
+}
+
+.exp-date-tag {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.15em;
+}
+
+.exp-location-info {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exp-location-info i {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+}
+
+.exp-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-role-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.exp-role-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-text-white);
+  line-height: 1.1;
+  transition: color var(--transition-fast);
+}
+
+.experience-row-card:hover .exp-role-title {
+  color: var(--color-accent);
+}
+
+.company-badge {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background-color: rgba(212, 243, 59, 0.08);
+  border: 1px solid rgba(212, 243, 59, 0.2);
+  padding: 4px 12px;
+  border-radius: 15px;
+  flex-shrink: 0;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.experience-row-card:hover .company-badge {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: #000000;
+}
+
+.company-badge.iaf-badge {
+  color: #a855f7;
+  background-color: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+.experience-row-card:hover .company-badge.iaf-badge {
+  border-color: #a855f7;
+  background-color: #a855f7;
+  color: #ffffff;
+}
+
+.company-badge.nss-badge {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.experience-row-card:hover .company-badge.nss-badge {
+  border-color: #10b981;
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.exp-company-sub {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.exp-bullet-points {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.exp-bullet-points li {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  list-style: none;
+  position: relative;
+  padding-left: 18px;
+  transition: color var(--transition-fast);
+}
+
+.experience-row-card:hover .exp-bullet-points li {
+  color: var(--color-text-white);
+}
+
+.exp-bullet-points li::before {
+  content: "✧";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -728,7 +900,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   CREDENTIALS & ATTRACTIVE HIGHLIGHTED EXPERIENCE
+   CREDENTIALS & ATTRACTIVE HIGHLIGHTED CERTIFICATIONS
    ========================================================================== */
 .credentials-grid-two-col {
   display: grid;
@@ -810,109 +982,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   margin-top: 5px;
-}
-
-/* HIGH-END INTERACTIVE HIGHLIGHTED EXPERIENCE ITEMS */
-.highlightable-exp {
-  padding: 20px 15px;
-  border-radius: 6px;
-  border-bottom: 1px solid var(--border-light);
-  transition: background-color var(--transition-normal), 
-              border-color var(--transition-normal), 
-              border-left var(--transition-fast),
-              transform var(--transition-normal);
-  border-left: 0px solid transparent;
-}
-
-.highlightable-exp:hover {
-  background-color: rgba(212, 243, 59, 0.015);
-  border-color: var(--border-hover);
-  border-left: 3px solid var(--color-accent);
-  transform: translateX(4px);
-}
-
-.exp-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-}
-
-.exp-title {
-  font-family: var(--font-serif);
-  font-size: 1.55rem;
-  color: var(--color-text-white);
-  transition: color var(--transition-fast);
-}
-
-.highlightable-exp:hover .exp-title {
-  color: var(--color-accent);
-}
-
-.exp-badge-badge {
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-accent);
-  background-color: rgba(212, 243, 59, 0.08);
-  border: 1px solid rgba(212, 243, 59, 0.2);
-  padding: 3px 10px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  transition: border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
-}
-
-.highlightable-exp:hover .exp-badge-badge {
-  border-color: var(--color-accent);
-  background-color: var(--color-accent);
-  color: #000000;
-}
-
-.exp-badge-badge.purple {
-  color: #a855f7;
-  background-color: rgba(168, 85, 247, 0.08);
-  border-color: rgba(168, 85, 247, 0.2);
-}
-
-.highlightable-exp:hover .exp-badge-badge.purple {
-  border-color: #a855f7;
-  background-color: #a855f7;
-  color: #ffffff;
-}
-
-.exp-badge-badge.green {
-  color: #10b981;
-  background-color: rgba(16, 185, 129, 0.08);
-  border-color: rgba(16, 185, 129, 0.2);
-}
-
-.highlightable-exp:hover .exp-badge-badge.green {
-  border-color: #10b981;
-  background-color: #10b981;
-  color: #ffffff;
-}
-
-.exp-expanded-details {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-  margin-top: 0;
-}
-
-.highlightable-exp:hover .exp-expanded-details {
-  max-height: 80px;
-  opacity: 1;
-  margin-top: 10px;
-}
-
-.exp-bullet {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -1106,6 +1175,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
   }
   
+  .experience-row-card {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 35px 10px;
+  }
+  
+  .exp-left-col {
+    padding-right: 0;
+  }
+  
   .toolkit-panel-box {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1193,11 +1272,6 @@ h1, h2, h3, h4, h5, h6 {
   .floating-circle {
     left: 45%;
     top: 5%;
-  }
-  
-  /* Disable slide down details on mobile to fit screen */
-  .highlightable-exp:hover .exp-expanded-details {
-    max-height: 120px;
   }
 }
 
