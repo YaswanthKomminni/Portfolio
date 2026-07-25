@@ -23,6 +23,20 @@
 </head>
 <body>
 
+  <!-- Custom Cinematic Follower Cursors -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Cursor-attached Project Image Hover Preview -->
+  <div class="project-hover-preview" id="project-hover-preview">
+    <div class="hover-preview-inner">
+      <img src="" alt="Project Preview" id="hover-preview-img">
+      <div class="hover-preview-fallback hidden" id="hover-preview-fallback">
+        <i data-lucide="cpu"></i>
+      </div>
+    </div>
+  </div>
+
   <!-- Navigation Header -->
   <header class="navbar">
     <div class="navbar-container">
@@ -71,8 +85,8 @@
         <div class="hero-title-wrapper">
           <div class="floating-circle"></div>
           <h1 class="hero-title">
-            <span class="title-line title-white">Komminni</span>
-            <span class="title-line title-chartreuse">Yaswanth.</span>
+            <span class="title-line title-white" id="hero-title-first">Komminni</span>
+            <span class="title-line title-chartreuse" id="hero-title-second">Yaswanth.</span>
           </h1>
         </div>
         
@@ -131,7 +145,7 @@
     <section id="work" class="work-section">
       <div class="section-container">
         
-        <div class="work-section-header">
+        <div class="work-section-header reveal-cinematic">
           <div class="header-left">
             <span class="section-label">/ SELECTED WORK</span>
             <h2 class="section-heading-serif">Things I've built.</h2>
@@ -145,7 +159,7 @@
         <div class="projects-list-container">
           
           <!-- Project 01 -->
-          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Soundsphere'">
+          <div class="project-row reveal-cinematic" data-image="assets/soundsphere.jpg" data-fallback="music" onclick="location.href='https://github.com/YaswanthKomminni/Soundsphere'">
             <div class="row-left">
               <span class="project-number">01</span>
               <div class="project-meta">
@@ -166,7 +180,7 @@
           </div>
           
           <!-- Project 02 -->
-          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/AI-AGENT-FARMING'">
+          <div class="project-row reveal-cinematic" data-image="" data-fallback="cpu" data-gradient="purple-gradient" onclick="location.href='https://github.com/YaswanthKomminni/AI-AGENT-FARMING'">
             <div class="row-left">
               <span class="project-number">02</span>
               <div class="project-meta">
@@ -186,7 +200,7 @@
           </div>
           
           <!-- Project 03 -->
-          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/JanMitra-AI-Powered-Government-Scheme-Assistant'">
+          <div class="project-row reveal-cinematic" data-image="assets/janmitra.jpg" data-fallback="bot" onclick="location.href='https://github.com/YaswanthKomminni/JanMitra-AI-Powered-Government-Scheme-Assistant'">
             <div class="row-left">
               <span class="project-number">03</span>
               <div class="project-meta">
@@ -206,7 +220,7 @@
           </div>
           
           <!-- Project 04 -->
-          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/ngo-awareness-website'">
+          <div class="project-row reveal-cinematic" data-image="" data-fallback="globe-2" data-gradient="green-gradient" onclick="location.href='https://github.com/YaswanthKomminni/ngo-awareness-website'">
             <div class="row-left">
               <span class="project-number">04</span>
               <div class="project-meta">
@@ -226,7 +240,7 @@
           </div>
           
           <!-- Project 05 -->
-          <div class="project-row" onclick="location.href='https://www.figma.com'">
+          <div class="project-row reveal-cinematic" data-image="" data-fallback="layout" data-gradient="purple-gradient" onclick="location.href='https://www.figma.com'">
             <div class="row-left">
               <span class="project-number">05</span>
               <div class="project-meta">
@@ -246,7 +260,7 @@
           </div>
           
           <!-- Project 06 -->
-          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Genomic-Variant-Detection-System'">
+          <div class="project-row reveal-cinematic" data-image="assets/genomic_variant.jpg" data-fallback="dna" onclick="location.href='https://github.com/YaswanthKomminni/Genomic-Variant-Detection-System'">
             <div class="row-left">
               <span class="project-number">06</span>
               <div class="project-meta">
@@ -266,7 +280,7 @@
           </div>
           
           <!-- Project 07 -->
-          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Automatic-Fire-Detection-and-Extinguishing-System'">
+          <div class="project-row reveal-cinematic" data-image="" data-fallback="flame" data-gradient="red-gradient" onclick="location.href='https://github.com/YaswanthKomminni/Automatic-Fire-Detection-and-Extinguishing-System'">
             <div class="row-left">
               <span class="project-number">07</span>
               <div class="project-meta">
@@ -286,7 +300,7 @@
           </div>
           
           <!-- Project 08 -->
-          <div class="project-row" onclick="location.href='https://github.com/YaswanthKomminni/Student-Grade-tracker'">
+          <div class="project-row reveal-cinematic" data-image="" data-fallback="graduation-cap" data-gradient="blue-gradient" onclick="location.href='https://github.com/YaswanthKomminni/Student-Grade-tracker'">
             <div class="row-left">
               <span class="project-number">08</span>
               <div class="project-meta">
@@ -313,14 +327,14 @@
     <section id="about" class="about-section">
       <div class="section-container">
         
-        <div class="about-section-header">
+        <div class="about-section-header reveal-cinematic">
           <span class="section-label">/ ABOUT</span>
           <h2 class="section-heading-serif">Hello.</h2>
         </div>
         
         <div class="about-grid-two-col">
           <!-- Left Col: Metrics -->
-          <div class="about-metrics-col">
+          <div class="about-metrics-col reveal-cinematic">
             <div class="metric-block">
               <span class="metric-value">7.11</span>
               <span class="metric-label">CURRENT CGPA</span>
@@ -336,7 +350,7 @@
           </div>
           
           <!-- Right Col: Paragraphs -->
-          <div class="about-text-col">
+          <div class="about-text-col reveal-cinematic">
             <p class="about-p">I'm an enthusiastic CS undergrad based in Coimbatore, India. My focus is on Python, data structures, and algorithmic problem-solving — with detours into embedded systems and the web whenever a project demands it.</p>
             <p class="about-p">I like work that crosses boundaries: a desktop GUI that becomes a daily tool, a bioinformatics script that turns into a learning exercise, an Arduino rig that ends up saving a tabletop from a candle.</p>
           </div>
@@ -349,13 +363,13 @@
     <section id="skills" class="toolkit-section">
       <div class="section-container">
         
-        <div class="toolkit-header">
+        <div class="toolkit-header reveal-cinematic">
           <span class="section-label">/ TOOLKIT</span>
           <h2 class="section-heading-serif">What I work with.</h2>
         </div>
         
         <!-- 4-Column Panel Box -->
-        <div class="toolkit-panel-box">
+        <div class="toolkit-panel-box reveal-cinematic">
           
           <!-- Technical Column -->
           <div class="toolkit-column">
@@ -415,7 +429,7 @@
         <div class="credentials-grid-two-col">
           
           <!-- Education Panel -->
-          <div class="credentials-panel">
+          <div class="credentials-panel reveal-cinematic">
             <span class="panel-header-label">EDUCATION</span>
             
             <div class="panel-rows">
@@ -439,7 +453,7 @@
           </div>
           
           <!-- Certs & Experience Panel -->
-          <div class="credentials-panel">
+          <div class="credentials-panel reveal-cinematic">
             <span class="panel-header-label">CERTIFICATIONS & EXPERIENCE</span>
             
             <div class="panel-rows">
@@ -487,14 +501,14 @@
     <section id="contact" class="contact-section">
       <div class="section-container">
         
-        <div class="contact-header">
+        <div class="contact-header reveal-cinematic">
           <span class="section-label">/ CONTACT</span>
           <h2 class="contact-heading-serif">Let's build <span class="chartreuse-text">something.</span></h2>
         </div>
         
         <div class="contact-grid-two-col">
           <!-- Left Col: Giant Email Box -->
-          <div class="email-cta-box" onclick="location.href='mailto:yaswanthkomminni06@gmail.com'">
+          <div class="email-cta-box reveal-cinematic" onclick="location.href='mailto:yaswanthkomminni06@gmail.com'">
             <span class="email-box-label">EMAIL</span>
             <div class="email-box-content">
               <span class="email-address-text">yaswanthkomminni06@gmail.com</span>
@@ -503,7 +517,7 @@
           </div>
           
           <!-- Right Col: Links list -->
-          <div class="contact-links-list">
+          <div class="contact-links-list reveal-cinematic">
             
             <a href="tel:+919182257321" class="contact-link-row">
               <span class="link-label"><i data-lucide="phone"></i> +91 91822 57321</span>

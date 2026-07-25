@@ -9,7 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #0b0a0a; /* Dark charcoal/matte black background */
+  background-color: #0b0a0a;
 }
 
 body {
@@ -19,6 +19,13 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Hide standard cursor on desktop systems with pointer ability */
+@media (hover: hover) {
+  body, a, button, .project-row, .email-cta-box, .social-pill, .nav-item, .get-in-touch-btn {
+    cursor: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -40,6 +47,135 @@ body {
   
   --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 0.15s ease;
+  --transition-cinematic: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   CINEMATIC CUSTOM CURSOR
+   ========================================================================== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, background-color var(--transition-fast);
+}
+
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover expansion states */
+body.hovering .custom-cursor {
+  transform: translate(-50%, -50%) scale(0.5);
+  background-color: #ffffff;
+}
+
+body.hovering .custom-cursor-follower {
+  width: 60px;
+  height: 60px;
+  border-color: #ffffff;
+  background-color: rgba(212, 243, 59, 0.08);
+}
+
+/* Hide cursor elements on touch devices */
+@media (hover: none) {
+  .custom-cursor, .custom-cursor-follower {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   PROJECT HOVER IMAGE PREVIEW
+   ========================================================================== */
+.project-hover-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 180px;
+  pointer-events: none;
+  z-index: 95;
+  transform: translate(-50%, -50%) scale(0) rotate(-4deg);
+  transform-origin: center center;
+  opacity: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  background-color: #0f172a;
+}
+
+.project-hover-preview.active {
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+.hover-preview-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hover-preview-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fallback card styles inside hover preview */
+.hover-preview-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fallback-icon-svg {
+  width: 60px;
+  height: 60px;
+  color: #ffffff;
+}
+
+.purple-gradient {
+  background: linear-gradient(135deg, #4f46e5 0%, #a855f7 100%);
+}
+
+.blue-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+}
+
+.red-gradient {
+  background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+}
+
+.green-gradient {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+.hidden {
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -217,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION & PARALLAX BLOB
    ========================================================================== */
 .hero-section {
   min-height: 90vh;
@@ -265,6 +401,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title-wrapper {
   position: relative;
   margin-bottom: 50px;
+  perspective: 1000px;
 }
 
 .floating-circle {
@@ -276,6 +413,21 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-accent);
   border-radius: 50%;
   z-index: 1;
+  animation: morph-blob 8s ease-in-out infinite, float-bob 14s ease-in-out infinite alternate;
+  will-change: transform, border-radius;
+}
+
+/* Morphing liquid blob animation for the solid accent */
+@keyframes morph-blob {
+  0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+  33% { border-radius: 42% 58% 46% 54% / 48% 44% 56% 52%; }
+  66% { border-radius: 54% 46% 58% 42% / 52% 56% 44% 48%; }
+  100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+}
+
+@keyframes float-bob {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(12px) rotate(15deg); }
 }
 
 .hero-title {
@@ -289,6 +441,24 @@ h1, h2, h3, h4, h5, h6 {
 .title-line {
   font-family: var(--font-serif);
   font-size: clamp(4.5rem, 11vw, 10rem);
+  display: block;
+}
+
+/* Word Slide-Up Entrance Setup */
+.title-line span {
+  display: inline-block;
+  transform: translateY(105%) rotate(2deg);
+  opacity: 0;
+  filter: blur(2px);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.title-line.animate span {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  filter: blur(0);
 }
 
 .title-white {
@@ -352,13 +522,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   SCROLLING SKILLS TICKER (MARQUEE)
+   SCROLLING SKILLS TICKER (MARQUEE WITH GRADIENT MASKS)
    ========================================================================== */
 .marquee-container {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background-color: #121211; /* Very dark brownish gold tint */
+  background-color: #121211;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
   padding: 18px 0;
@@ -366,6 +536,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   margin-top: 40px;
   margin-bottom: 40px;
+  
+  /* Mask gradient for cinematic edge fade */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
 }
 
 .marquee-track {
@@ -896,6 +1070,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
+   CINEMATIC 3D SCROLL REVEALS
+   ========================================================================== */
+.reveal-cinematic {
+  opacity: 0;
+  transform: translateY(60px) rotateX(10deg);
+  filter: blur(4px);
+  transform-origin: center top;
+  will-change: transform, opacity, filter;
+  transition: opacity var(--transition-cinematic), 
+              transform var(--transition-cinematic), 
+              filter var(--transition-cinematic);
+}
+
+.reveal-cinematic.active {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+  filter: blur(0);
+}
+
+/* ==========================================================================
    RESPONSIVE LAYOUT RULES (MOBILE-FIRST)
    ========================================================================== */
 
@@ -940,15 +1134,15 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .nav-links {
-    display: none; /* Hide desktop nav links */
+    display: none;
   }
   
   .navbar .get-in-touch-btn {
-    display: none; /* Hide desktop touch button */
+    display: none;
   }
   
   .mobile-toggle {
-    display: block; /* Show mobile trigger */
+    display: block;
   }
   
   .hero-bottom-grid {
@@ -972,7 +1166,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .row-right {
-    display: none; /* Hide indicator arrow on mobile */
+    display: none;
   }
   
   .toolkit-panel-box {
@@ -997,5 +1191,19 @@ h1, h2, h3, h4, h5, h6 {
   .floating-circle {
     left: 45%;
     top: 5%;
+  }
+}
+
+/* Up to 480px minor screens */
+@media (max-width: 480px) {
+  .hero-social-links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .social-pill {
+    width: 100%;
+    justify-content: center;
   }
 }
